@@ -2,26 +2,23 @@ import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import { GameBoard } from "../components/GameBoard";
-import { collectGiphyData } from "./memory-utils";
+import { collectGiphyData, buildImageMap } from "./memory-utils";
 import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [imageUrls, setImageUrls] = useState([]);
+  const [imagesData, setImagesData] = useState([]);
 
   useEffect(() => {
     collectGiphyData().then((result) => {
-      setImageUrls(result);
+      setImagesData(buildImageMap(result));
     });
-  });
-
-  if (imageUrls.length > 0) {
-    console.log(imageUrls);
-  }
+  }, []);
 
   return (
     <>
-      <div className="board">{/* <GameBoard imageUrls={imageUrls} /> */}</div>
+      <GameBoard imagesData={imagesData} />
+
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
