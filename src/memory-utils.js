@@ -1,7 +1,6 @@
 async function collectGiphyData() {
   const url =
-    //"https://api.giphy.com/v1/gifs/search?api_key=gIr5EZQhAHQYgbHXln73tQgh7QevcjKf&q=friends+cast&limit=5&offset=0&rating=g&lang=en&bundle=messaging_non_clips";
-    "https://api.giphy.com/v1/gifs/random?api_key=&tag=friends+tv+show+cast&rating=g";
+    "https://api.giphy.com/v1/gifs/search?api_key=gIr5EZQhAHQYgbHXln73tQgh7QevcjKf&q=friends+cast&limit=5&offset=0&rating=g&lang=en&bundle=messaging_non_clips";
   try {
     const response = await fetch(url);
     if (!response.ok) {
