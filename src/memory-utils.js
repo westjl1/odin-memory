@@ -1,6 +1,6 @@
 async function collectGiphyData() {
   const url =
-    "https://api.giphy.com/v1/gifs/search?api_key=gIr5EZQhAHQYgbHXln73tQgh7QevcjKf&q=friends+cast&limit=5&offset=0&rating=g&lang=en&bundle=messaging_non_clips";
+    "https://api.giphy.com/v1/gifs/search?api_key=gIr5EZQhAHQYgbHXln73tQgh7QevcjKf&q=friends+cast&limit=6&offset=0&rating=g&lang=en&bundle=messaging_non_clips";
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -28,13 +28,13 @@ function buildImageMap(imagesData) {
     imageMap.push({
       id: imageId,
       src: imageUrl,
-      className: "game-image",
+      className: "card flip",
       alt: imageAlt,
     });
     imageMap.push({
       id: imageIdDup,
       src: imageUrl,
-      className: "game-image",
+      className: "card flip",
       alt: imageAlt,
     });
   });
