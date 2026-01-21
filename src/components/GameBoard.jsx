@@ -34,7 +34,7 @@ function GameBoard(props) {
               <img
                 id={image.id}
                 className="logo"
-                src="../public/odin.jpeg"
+                src="./odin.jpeg"
                 alt="Odin logo"
               />
             </div>
